@@ -18,11 +18,17 @@ function isPrime(num) {
     return true;
 }
 
-var check = 600851475143;
-
-for (i = Math.floor(Math.sqrt(check)) ; i > 0; i--) {
-    if (isPrime(i) && check%i === 0) {
-        console.log(i);
-        break;
+var num = 600851475143;
+function maxPrimeFactor(check){
+    for (i = Math.floor(check / 2) ; i > 0; i--) {
+        if (isPrime(i) && check%i === 0) {
+            return i;
+            
+        }
     }
 }
+
+var start = new Date().getTime();
+console.log('Answer: ' + maxPrimeFactor(num));
+var end = new Date().getTime();
+console.log('Runtime: ' + (end - start) + 'ms');
