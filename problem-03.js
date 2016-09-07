@@ -5,6 +5,8 @@ var maxPrimeFactor = function(input){
     
     while(division > 1 && division % 2 === 0){
         division /= 2;
+        if (division === 1){
+        	return 2;
         
     }
     while(division > 1 ){
