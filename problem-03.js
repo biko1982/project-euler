@@ -8,7 +8,11 @@ function isPrime(num) {
     if (num === 2) {
         return true;
     }
-
+    
+    if (num % 2 === 0) {
+        return false;
+    }
+    
     for (var i = 3; i <= sqrt; i += 2) {
         if(num % i === 0) {
             return false;
@@ -20,7 +24,8 @@ function isPrime(num) {
 
 var num = 600851475143;
 function maxPrimeFactor(check){
-    for (i = Math.floor(check / 2) ; i > 0; i--) {
+    var begin = Math.floor(check / 2)
+    for (i = begin ; i > 0; i--) {
         if (isPrime(i) && check%i === 0) {
             return i;
             
