@@ -9,7 +9,7 @@ function isPrime(num) {
         return true;
     }
 
-    for (var i = 3; i <= sqrt; i++) {
+    for (var i = 3; i <= sqrt; i += 2) {
         if(num % i === 0) {
             return false;
         }
