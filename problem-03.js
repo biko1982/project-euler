@@ -5,12 +5,12 @@ var maxPrimeFactor = function(input){
     
     while(division > 1 && division % 2 === 0){
         division /= 2;
-        console.log(division);
+        
     }
     while(division > 1 ){
         while (division % divisor === 0){
         division /= divisor;
-        console.log(division);
+        
         }
         divisor += 2;
         	
