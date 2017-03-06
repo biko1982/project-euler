@@ -26,23 +26,25 @@ def isPrime(num)
 
 end
 
-check = 600851475143
-#check = 122
+number = 600851475143
 
-k = sqrt(check)
-j = k
+j = 3
+factors = []
 
-while j > 0
+while number > 1
 
-  if isPrime(j) and (check % j == 0)
-  	puts j
+  if isPrime(number)
+  	factors.push number
+  	puts factors.max
   	break
-  end
-
-  if j % 2 != 0
-  	j -= 2
+  elsif number % 2 == 0
+    factors.push 2
+    number /= 2
+  elsif number % j == 0
+    factors.push j
+    number /= j
   else
-    j -= 1
+    j += 2
   end
 
 end
