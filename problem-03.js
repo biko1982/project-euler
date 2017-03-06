@@ -1,28 +1,29 @@
-function isPrime(num) {
-    var sqrt = Math.floor(Math.sqrt(num));
+var maxPrimeFactor = function(input){
+	
+    var division = input;
+    var divisor = 3;
     
-    if(num < 2) {
-        return false;
+    while(division > 1 && division % 2 === 0){
+        division /= 2;
+        if (division === 1){
+        	return 2;
+        
     }
-
-    if (num === 2) {
-        return true;
-    }
-
-    for (var i = 2; i <= sqrt; i++) {
-        if(num % i === 0) {
-            return false;
+    while(division > 1 ){
+        while (division % divisor === 0){
+        division /= divisor;
+        
         }
+        divisor += 2;
+        	
     }
+    
+	return divisor - 2;
+};
 
-    return true;
-}
+var num = 600851475143 ;
 
-var check = 600851475143;
-
-for (i = Math.floor(Math.sqrt(check)) ; i > 0; i--) {
-    if (isPrime(i) && check%i === 0) {
-        console.log(i);
-        break;
-    }
-}
+var start = new Date().getTime();
+console.log('Answer: ' + maxPrimeFactor(num));
+var end = new Date().getTime();
+console.log('Runtime: ' + (end - start) + 'ms');
